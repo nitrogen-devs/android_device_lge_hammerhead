@@ -1,5 +1,4 @@
 #
-# Copyright 2013 The Android Open Source Project
 # Copyright 2016 Nitrogen Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,24 +14,23 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
-
-# Get the long list of APNs
-PRODUCT_COPY_FILES := device/lge/hammerhead/apns-full-conf.xml:system/etc/apns-conf.xml
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := hemmerhead,d820,d821
+# Inherit some common Nitrogen stuff.
+$(call inherit-product, vendor/nitrogen/products/common.mk)
 
-PRODUCT_NAME := full_hammerhead
+# Inherit device configuration
+$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
+
+## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerhead
-PRODUCT_BRAND := Android
+PRODUCT_NAME := nitrogen_hammerhead
+PRODUCT_BRAND := LGE
 PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
-PRODUCT_RESTRICT_VENDOR_FILES := true
-
-$(call inherit-product, device/lge/hammerhead/device.mk)
-$(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
+PRODUCT_RESTRICT_VENDOR_FILES := false
