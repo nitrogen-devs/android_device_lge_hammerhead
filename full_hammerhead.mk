@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES := device/lge/hammerhead/apns-full-conf.xml:system/etc/apns-c
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := hemmerhead,d820,d821
+TARGET_OTA_ASSERT_DEVICE := hammerhead,d820,d821
 
 PRODUCT_NAME := full_hammerhead
 PRODUCT_DEVICE := hammerhead
