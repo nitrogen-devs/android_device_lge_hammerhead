@@ -24,7 +24,8 @@ ART_USE_OPTIMIZING_COMPILER := true
 
 TARGET_NO_BOOTLOADER := true
 
-KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX:= arm-eabi-
 TARGET_KERNEL_CONFIG := hammerhead_defconfig	
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 BOARD_KERNEL_BASE := 0x00000000
