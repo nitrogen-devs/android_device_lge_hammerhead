@@ -187,6 +187,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
+# OTA package
+PRODUCT_PACKAGES += \
+    OTAUpdates \
+    libbypass
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ota.romname=Nitrogen-OS \
+    ro.ota.version=$(shell date +"%Y%m%d") \
+    ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/hammerhead/ota.xml
+
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/gps.conf:system/etc/gps.conf
